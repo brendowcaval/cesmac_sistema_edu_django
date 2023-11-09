@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="text-align: center;">Alunos Cadastrados</h1>
+<div class="container">
+    <div class="row">
+        {% for aluno in alunos %}
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ aluno.nome}} {{ aluno.sobrenome}}</h5>
+                    <a href="{% url 'informacoes_aluno' aluno.id %}" class="card-link">Ver mais Informações</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+
+
+    </div>
+</div>
+
+{% endblock %}
